@@ -1,3 +1,25 @@
+const produtos = [
+    { id: 1, nome: 'camisa em malha', preço: 100 },
+    { id: 2, nome: 'camisa polo', preço: 150 },
+    { id: 3, nome: 'camisa metálica', preço: 120 },
+    { id: 4, nome: 'kit camisas', preço: 120},
+    { id: 5, nome: 'camisa florida', preço: 120 }
+];
+
+// Função para exibir a lista de produtos
+function exibirProdutos(lista) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = ''; // Limpar a lista antes de exibir os produtos
+
+    lista.forEach(produto => {
+        const li = document.createElement('li');
+        li.className = 'product-item';
+        li.textContent = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+        productList.appendChild(li);
+    });
+}
+
+
 let iconecar = document.querySelector('.carrinhoicone')
 let fechar= document.querySelector('.meucarrinho .fechar')
 let body= document.querySelector('body')
